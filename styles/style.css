@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: #fefefe;
+    background: #f9f9f9;
+    min-width: 1024px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/**
+* Header
+*/
+
+header {
+    height: 75px;
+    box-sizing: border-box;
+    position: fixed;
+    border-bottom: 1px solid #8a8a8a;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #222222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+
+header .left-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .actions-container {
+    margin: 0 20px;
+}
+
+.action-item {
+    margin: 0 20px;
+    cursor: pointer;
+    font-size: 52px;
+    padding: 5px;
+    display: inline-block;
+    transition: transform ease-in-out 300ms;
+}
+
+.action-item:active {
+    transform: rotate(360deg);
+}
+
+/**
+* Main/content
+*/
+
+main {
+    min-height: calc(100% - 50px - 75px);
+    padding-top: 75px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Left side
+**/
+
+.paint-container {
+    flex-basis: 720px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    /*background: orange;*/
+}
+
+.color-palette {
+    min-height: 70px;
+    padding: 10px;
+    user-select: none;
+}
+
+.color-item {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: box-shadow linear 100ms, transform linear 100ms;
+}
+
+.color-item.selected {
+    border: 1px solid black;
+    transform: scale(1.1);
+}
+
+.color-item:not(.selected) {
+    cursor: pointer;
+}
+
+.color-item:not(.selected):hover {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    transform: scale(1.2);
+}
+
+.color-item:not(.selected):active {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.canvas {
+    border: 1px solid black;
+    border-radius: 20px;
+    display: block;
+    margin: auto;
+    background: #fff;
+}
+
+.paint-container .actions-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+/* right side
+**/
+
+.list-container {
+    flex-basis: 304px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    /*background: violet;*/
+}
+
+.drawing-item {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform linear 100ms, box-shadow ease-in 50ms;
+}
+
+.drawing-item:hover {
+    transform: translate(-10px, -10px);
+}
+
+.drawing-item:active {
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
+}
+
+/**
+* footer
+*/
+
+footer {
+    box-sizing: border-box;
+    height: 50px;
+    border-top: 1px solid #8a8a8a;
+    background: #f3f3f3;
+    padding-left: 10px;
+}
